@@ -1,3 +1,5 @@
+import { PixelFormat, TextureDataType } from "../../constants";
+
 export interface WebGLCapabilitiesParameters {
     precision?: string | undefined;
     logarithmicDepthBuffer?: boolean | undefined;
@@ -25,4 +27,7 @@ export class WebGLCapabilities {
 
     getMaxAnisotropy(): number;
     getMaxPrecision(precision: string): string;
+
+    pixelFormatReadable(format: PixelFormat): boolean;
+    textureFormatReadable(type: TextureDataType): boolean;
 }
